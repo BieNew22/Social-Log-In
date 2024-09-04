@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
+import { AuthGuard } from './auth/core/auth.guard';
+
+import { SecretComponent } from './secret/secret.component';
 
 export const routes: Routes = [
     {
@@ -11,7 +13,12 @@ export const routes: Routes = [
     {
         path: 'auth',
         loadChildren: () => import('./auth/auth.routes').then(m => m.AuthRoutingModule)
-    }
+    },
+    {
+        path: 'secret',
+        canActivate: [AuthGuard],
+        component: SecretComponent
+    },
 ];
 
 // more information : https://www.angular.kr/guide/router

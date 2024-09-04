@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-auth-login',
@@ -7,7 +7,16 @@ import { RouterOutlet } from "@angular/router";
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+    constructor(
+        private router: Router,
+    ) {}
+
     ngOnInit(): void {
         
+    }
+
+    navigateToSecret() {
+        this.router.navigate(['/secret']);
     }
 }

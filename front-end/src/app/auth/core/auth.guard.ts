@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
     canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         
-        let a = 0;
+        let a = 1;
 
         if (a == 1) {
             return true;

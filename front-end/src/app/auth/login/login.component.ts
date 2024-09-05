@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { KakaoAuthService } from "../service/kakao.auth.service";
+import { environment } from "../../../environments/environment";
 
 @Component({
     selector: 'app-auth-login',
@@ -23,12 +24,6 @@ export class LoginComponent implements OnInit {
     }
 
     kakaoLogin(): void {
-        this.kakaoAuth.login()
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        window.location.href = environment.getKakaoAuthCode + `?client_id=${environment.kakaoKey}&redirect_uri=${environment.kakaoRedirectUri}&response_type=code`
     }
 }

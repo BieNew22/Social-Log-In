@@ -26,7 +26,7 @@ export class KakaoAuthService {
 
     public login(): Promise<any> {
         return new Promise((resolve, reject) => {
-            window.Kakao.Auth.login({
+            window.Kakao.Auth.authorize({
                 success: (authObj: any) => {
                     console.log('로그인 성공', authObj);
                     resolve(authObj);
@@ -34,7 +34,8 @@ export class KakaoAuthService {
                 fail: (err: any) => {
                     console.error('로그인 실패', err);
                     reject(err);
-                }
+                },
+                // redirectUri: environment.kakaoRedirectUri,
             });
         });
     }

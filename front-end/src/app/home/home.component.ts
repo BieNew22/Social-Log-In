@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
     }
 
     navigateToSecret(): void {
-        this.router.navigate(['/secret']);
+        this.router.navigate(['secret']);
     }
 
     navigateToLogin(): void {
-        this.router.navigate(['/auth/login']);
+        this.router.navigate(['auth', 'login']);
     }
 }

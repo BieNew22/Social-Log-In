@@ -19,10 +19,6 @@ export class LoginComponent implements OnInit {
         
     }
 
-    navigateToSecret(): void {
-        this.router.navigate(['/secret']);
-    }
-
     kakaoLogin(): void {
         window.location.href = environment.getKakaoAuthCode + `?client_id=${environment.kakaoKey}&redirect_uri=${environment.kakaoRedirectUri}&response_type=code`
     }

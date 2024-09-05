@@ -24,20 +24,8 @@ export class KakaoAuthService {
         }
     }
 
-    public login(): Promise<any> {
-        return new Promise((resolve, reject) => {
-            window.Kakao.Auth.authorize({
-                success: (authObj: any) => {
-                    console.log('로그인 성공', authObj);
-                    resolve(authObj);
-                },
-                fail: (err: any) => {
-                    console.error('로그인 실패', err);
-                    reject(err);
-                },
-                // redirectUri: environment.kakaoRedirectUri,
-            });
-        });
+    public login(authCode: String): void {
+        //TODO : authCode를서버로 보내서 accesToken & refreshToken을 받아오기
     }
 
     public logout(): void {
